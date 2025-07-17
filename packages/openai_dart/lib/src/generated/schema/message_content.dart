@@ -55,7 +55,7 @@ sealed class MessageContent with _$MessageContent {
     @Default('text') String type,
 
     /// The text content that is part of a message.
-    required MessageContentText text,
+    required String text,
   }) = MessageContentTextObject;
 
   // ------------------------------------------
