@@ -39,7 +39,7 @@ extension MessageContentX on MessageContent {
   /// [MessageContentText].
   String get text {
     return mapOrNull(
-      text: (final MessageContentTextObject c) => c.text.value,
+      text: (final MessageContentTextObject c) => c.text,
       imageFile: (final a) => throw ArgumentError(
         'Message content is not of type `text`',
       ),
