@@ -55,7 +55,7 @@ sealed class MessageContent with _$MessageContent {
     @Default('text') String type,
 
     /// The text content that is part of a message.
-    required String text,
+    @JsonKey(toJson: messageContentTextToJson) required MessageContentText text,
   }) = MessageContentTextObject;
 
   // ------------------------------------------
@@ -91,4 +91,8 @@ enum MessageContentEnumType {
   text,
   @JsonValue('refusal')
   refusal,
+}
+
+String messageContentTextToJson(MessageContentText value) {
+  return value.value;
 }

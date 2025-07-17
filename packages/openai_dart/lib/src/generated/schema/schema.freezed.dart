@@ -67098,7 +67098,9 @@ mixin _$MessageContent {
     required TResult Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)
         imageUrl,
-    required TResult Function(String type, String text) text,
+    required TResult Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)
+        text,
     required TResult Function(String type, String refusal) refusal,
   }) =>
       throw _privateConstructorUsedError;
@@ -67110,7 +67112,9 @@ mixin _$MessageContent {
     TResult? Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)?
         imageUrl,
-    TResult? Function(String type, String text)? text,
+    TResult? Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)?
+        text,
     TResult? Function(String type, String refusal)? refusal,
   }) =>
       throw _privateConstructorUsedError;
@@ -67122,7 +67126,9 @@ mixin _$MessageContent {
     TResult Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)?
         imageUrl,
-    TResult Function(String type, String text)? text,
+    TResult Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)?
+        text,
     TResult Function(String type, String refusal)? refusal,
     required TResult orElse(),
   }) =>
@@ -67316,7 +67322,9 @@ class _$MessageContentImageFileObjectImpl
     required TResult Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)
         imageUrl,
-    required TResult Function(String type, String text) text,
+    required TResult Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)
+        text,
     required TResult Function(String type, String refusal) refusal,
   }) {
     return imageFile(type, this.imageFile);
@@ -67331,7 +67339,9 @@ class _$MessageContentImageFileObjectImpl
     TResult? Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)?
         imageUrl,
-    TResult? Function(String type, String text)? text,
+    TResult? Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)?
+        text,
     TResult? Function(String type, String refusal)? refusal,
   }) {
     return imageFile?.call(type, this.imageFile);
@@ -67346,7 +67356,9 @@ class _$MessageContentImageFileObjectImpl
     TResult Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)?
         imageUrl,
-    TResult Function(String type, String text)? text,
+    TResult Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)?
+        text,
     TResult Function(String type, String refusal)? refusal,
     required TResult orElse(),
   }) {
@@ -67546,7 +67558,9 @@ class _$MessageContentImageUrlObjectImpl extends MessageContentImageUrlObject {
     required TResult Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)
         imageUrl,
-    required TResult Function(String type, String text) text,
+    required TResult Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)
+        text,
     required TResult Function(String type, String refusal) refusal,
   }) {
     return imageUrl(type, this.imageUrl);
@@ -67561,7 +67575,9 @@ class _$MessageContentImageUrlObjectImpl extends MessageContentImageUrlObject {
     TResult? Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)?
         imageUrl,
-    TResult? Function(String type, String text)? text,
+    TResult? Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)?
+        text,
     TResult? Function(String type, String refusal)? refusal,
   }) {
     return imageUrl?.call(type, this.imageUrl);
@@ -67576,7 +67592,9 @@ class _$MessageContentImageUrlObjectImpl extends MessageContentImageUrlObject {
     TResult Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)?
         imageUrl,
-    TResult Function(String type, String text)? text,
+    TResult Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)?
+        text,
     TResult Function(String type, String refusal)? refusal,
     required TResult orElse(),
   }) {
@@ -67668,7 +67686,11 @@ abstract class _$$MessageContentTextObjectImplCopyWith<$Res>
       __$$MessageContentTextObjectImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String type, String text});
+  $Res call(
+      {String type,
+      @JsonKey(toJson: messageContentTextToJson) MessageContentText text});
+
+  $MessageContentTextCopyWith<$Res> get text;
 }
 
 /// @nodoc
@@ -67696,15 +67718,27 @@ class __$$MessageContentTextObjectImplCopyWithImpl<$Res>
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
-              as String,
+              as MessageContentText,
     ));
+  }
+
+  /// Create a copy of MessageContent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MessageContentTextCopyWith<$Res> get text {
+    return $MessageContentTextCopyWith<$Res>(_value.text, (value) {
+      return _then(_value.copyWith(text: value));
+    });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$MessageContentTextObjectImpl extends MessageContentTextObject {
-  const _$MessageContentTextObjectImpl({this.type = 'text', required this.text})
+  const _$MessageContentTextObjectImpl(
+      {this.type = 'text',
+      @JsonKey(toJson: messageContentTextToJson) required this.text})
       : super._();
 
   factory _$MessageContentTextObjectImpl.fromJson(Map<String, dynamic> json) =>
@@ -67717,7 +67751,8 @@ class _$MessageContentTextObjectImpl extends MessageContentTextObject {
 
   /// The text content that is part of a message.
   @override
-  final String text;
+  @JsonKey(toJson: messageContentTextToJson)
+  final MessageContentText text;
 
   @override
   String toString() {
@@ -67755,7 +67790,9 @@ class _$MessageContentTextObjectImpl extends MessageContentTextObject {
     required TResult Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)
         imageUrl,
-    required TResult Function(String type, String text) text,
+    required TResult Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)
+        text,
     required TResult Function(String type, String refusal) refusal,
   }) {
     return text(type, this.text);
@@ -67770,7 +67807,9 @@ class _$MessageContentTextObjectImpl extends MessageContentTextObject {
     TResult? Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)?
         imageUrl,
-    TResult? Function(String type, String text)? text,
+    TResult? Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)?
+        text,
     TResult? Function(String type, String refusal)? refusal,
   }) {
     return text?.call(type, this.text);
@@ -67785,7 +67824,9 @@ class _$MessageContentTextObjectImpl extends MessageContentTextObject {
     TResult Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)?
         imageUrl,
-    TResult Function(String type, String text)? text,
+    TResult Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)?
+        text,
     TResult Function(String type, String refusal)? refusal,
     required TResult orElse(),
   }) {
@@ -67843,7 +67884,8 @@ class _$MessageContentTextObjectImpl extends MessageContentTextObject {
 abstract class MessageContentTextObject extends MessageContent {
   const factory MessageContentTextObject(
       {final String type,
-      required final String text}) = _$MessageContentTextObjectImpl;
+      @JsonKey(toJson: messageContentTextToJson)
+      required final MessageContentText text}) = _$MessageContentTextObjectImpl;
   const MessageContentTextObject._() : super._();
 
   factory MessageContentTextObject.fromJson(Map<String, dynamic> json) =
@@ -67854,7 +67896,8 @@ abstract class MessageContentTextObject extends MessageContent {
   String get type;
 
   /// The text content that is part of a message.
-  String get text;
+  @JsonKey(toJson: messageContentTextToJson)
+  MessageContentText get text;
 
   /// Create a copy of MessageContent
   /// with the given fields replaced by the non-null parameter values.
@@ -67962,7 +68005,9 @@ class _$MessageContentRefusalObjectImpl extends MessageContentRefusalObject {
     required TResult Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)
         imageUrl,
-    required TResult Function(String type, String text) text,
+    required TResult Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)
+        text,
     required TResult Function(String type, String refusal) refusal,
   }) {
     return refusal(type, this.refusal);
@@ -67977,7 +68022,9 @@ class _$MessageContentRefusalObjectImpl extends MessageContentRefusalObject {
     TResult? Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)?
         imageUrl,
-    TResult? Function(String type, String text)? text,
+    TResult? Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)?
+        text,
     TResult? Function(String type, String refusal)? refusal,
   }) {
     return refusal?.call(type, this.refusal);
@@ -67992,7 +68039,9 @@ class _$MessageContentRefusalObjectImpl extends MessageContentRefusalObject {
     TResult Function(String type,
             @JsonKey(name: 'image_url') MessageContentImageUrl imageUrl)?
         imageUrl,
-    TResult Function(String type, String text)? text,
+    TResult Function(String type,
+            @JsonKey(toJson: messageContentTextToJson) MessageContentText text)?
+        text,
     TResult Function(String type, String refusal)? refusal,
     required TResult orElse(),
   }) {

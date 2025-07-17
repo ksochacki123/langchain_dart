@@ -5646,14 +5646,14 @@ _$MessageContentTextObjectImpl _$$MessageContentTextObjectImplFromJson(
         Map<String, dynamic> json) =>
     _$MessageContentTextObjectImpl(
       type: json['type'] as String? ?? 'text',
-      text: json['text'] as String,
+      text: MessageContentText.fromJson(json['text'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$MessageContentTextObjectImplToJson(
         _$MessageContentTextObjectImpl instance) =>
     <String, dynamic>{
       'type': instance.type,
-      'text': instance.text,
+      'text': messageContentTextToJson(instance.text),
     };
 
 _$MessageContentRefusalObjectImpl _$$MessageContentRefusalObjectImplFromJson(
